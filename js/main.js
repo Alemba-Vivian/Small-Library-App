@@ -1,3 +1,6 @@
+// working with the DOM elements
+const displayBooks = document.querySelector('.display-books');
+
 
 //storing my books objects in an array
 let myLibrary =[];
@@ -47,8 +50,10 @@ book2.read = "read";
 
 //looping through the array using the for.Each
 myLibrary.forEach((element, index, array)=>{
+    displayBooks.innerText = `Book Title:${element.title} by Author: ${element.author} is ${element.pages} pages`;
     console.log(element);
 })
+return myLibrary;
 
 
 }

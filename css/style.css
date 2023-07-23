@@ -14,18 +14,62 @@ body{
 
 /* styling the header */
 header{
-    padding: 20px;
+    /* background-color: orange; */
   
 }
-ul.nav-items{
+/* naviagation top */
+.nav-top{
+    background-color: #0a2351;
+    padding: 10px;
+    color: #00FFFF;
+}
+ul.nav-items1{
     display: flex;
     list-style-type: none;
     align-items: center;
     justify-content: space-around;
 }
-.nav-items>li>a{
+.nav-items1 .left>li>a{
     text-decoration: none;
-    color: black;
+    color: #00FFFF;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.left{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.right{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+
+}
+.nav-items1 .right>li>a{
+    text-decoration: none;
+    color: #00FFFF;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* navigation bottom */
+.nav-bottom{
+    background-color: #DCDCDC;
+    padding: 10px;
+}
+ul.nav-items2{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav-items2>li>a{
+    text-decoration: none;
+    color: #0a2351;
     font-weight: bold;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -37,21 +81,58 @@ ul.nav-items{
 
 /* styling the main section */
 main{
-    padding: 40px;
-   
-  
-    /* flex-direction: column;
-    justify-content: space-between; */
+    padding:50px
     
 }
 .grid-container{
-    height: 100vh;
+    padding: 40px;
     display: grid;
     grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
     justify-content: space-around;
 }
+.image-one{
+    padding-bottom: 40px;
+}
 
+.column-one{
+  
 
+}
 .column-two{
-    padding-left: 30px;
+background-color: #00FFFF;
+padding:20px 0 10px 20px;
+border-radius: 10px;
+   
+    
+}
+.para{
+    padding-bottom: 10px;
+}
+.content-1{
+    padding-bottom: 20px;
+}
+.content-2{
+    padding-bottom: 20px;
+}
+.content-4{
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+button{
+    padding: 20px;
+    border-radius: 20px;
+    border: none;
+    background-color:#0a2351;
+    color: white;
+    font-weight: bold;
+}
+
+/* styling the display books container */
+.display-books{
+    background-color: #DCDCDC;
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
