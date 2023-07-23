@@ -1,9 +1,6 @@
 
-
-
 //storing my books objects in an array
 let myLibrary =[];
-
 
 
 //creating a constructor for my books
@@ -44,8 +41,14 @@ book2.read = "read";
 
 
 //pushing the object into the array
-myLibrary.push(book, book1, book2);
-return myLibrary;
+ myLibrary.push(book, book1, book2);
+ 
+
+
+//looping through the array using the for.Each
+myLibrary.forEach((element, index, array)=>{
+    console.log(element);
+})
 
 
 }
