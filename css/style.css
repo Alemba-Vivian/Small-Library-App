@@ -129,12 +129,41 @@ button{
 }
 
 /* styling the display books container */
+
 .display-books{
-    background-color: #DCDCDC;
-    padding-top: 30px;
-    display: flex;
-    align-items: center;
+    padding-top: 40px;
+    width: 600px;
+    /* display: grid;
+    text-align: center;
     justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px; */
+   
+}
+ol.book-lists{
+    padding: 20px;
+
+
+}
+ol.book-lists a{
+    color: red;
+    padding-left: 40px;
+}
+.display-books ol li::marker{
+    /* content: " 🧡 "; */
+}
+.display-books li:nth-child(even){
+    background-color:#00FFFF;
+    border-radius: 10px;
+}
+.display-books li:nth-child(odd){
+    background-color:#DCDCDC;
+    border-radius: 10px;
+}
+.book-lists>li{
+    padding: 10px;
+    font-size: 1.2rem;
+    letter-spacing: 1.3;
 }
 
 

@@ -1,10 +1,38 @@
 // working with the DOM elements
 const displayBooks = document.querySelector('.display-books');
+const listItems =document.querySelector('.book-lists');
 const btnNewBookButton = document.getElementById('btn-new-book');
 
+let bookTitle = document.getElementById('title');
+let bookAuthor = document.getElementById('author');
+let bookPages = document.getElementById('pages');
+
+const formSubmit =document.querySelector('#form-element');
+
 // working with buttons
+
 //new book button
 btnNewBookButton.addEventListener('click', showForm);
+
+//submit form
+formSubmit.addEventListener('submit', (e)=>{
+    e.preventDefault();
+
+//   checking if the inputs is empty
+  if(bookTitle.value == "" || bookAuthor.value== "" || bookPages.value == ""){
+    alert("Ensure you input all the values in all the fields")
+  }else{
+    alert("The form has been submitted successfully")
+    console.log(addBookToLibrary());
+  }
+  bookTitle.value ="";
+  bookAuthor.value ="";
+  bookPages.value ="";
+})
+
+
+
+
 //storing my books objects in an array
 let myLibrary =[];
 
@@ -28,39 +56,38 @@ Book.prototype.bookInfo = function (){
 function addBookToLibrary(){
 
 //creating an empty object
-let book = new Book("Javascript", "James",30, "read");
-console.log(book.bookInfo());
-
-let book1 = new Book();
-book1.title ="Java";
-book1.author = "Kelvin Mark";
-book1.pages = 256;
-book1.read = "read";
-
-
-let book2 = new Book();
-book2.title ="Python pdf";
-book2.author = "John Doe";
-book2.pages = 256;
-book2.read = "read";
-
+let book = new Book();
+ 
+book.title = bookTitle.value;
+book.author = bookAuthor.value;
+book.pages = bookPages.value;
 
 
 //pushing the object into the array
- myLibrary.push(book, book1, book2);
+ myLibrary.push(book);
  
 
 
 //looping through the array using the for.Each
 myLibrary.forEach((element, index, array)=>{
-    return displayBooks.innerText = `${index} Book Title:${element.title} by Author: ${element.author} is ${element.pages} pages`;
+    let list = document.createElement('li');
+  
+    // div.style.width ='200px';
+    // // div.style.height ='200px';
+    // div.style.backgroundColor ='#00FFFF';
+    // div.style.padding ='20px';
+    // div.style.borderRadius ='5px';
+    list.innerText = `Book Title: ${element.title} Author: ${element.author} Pages: ${element.pages} pages`;
+    listItems.appendChild(list);
+    
      
 })
+// console.log(myLibrary)
 return myLibrary;
 
 
 }
-console.log(addBookToLibrary());
+// console.log(addBookToLibrary());
 
 
 //creating a function that brings a new form where users can input there books detail
