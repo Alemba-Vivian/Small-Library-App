@@ -1,7 +1,10 @@
 // working with the DOM elements
 const displayBooks = document.querySelector('.display-books');
+const btnNewBookButton = document.getElementById('btn-new-book');
 
-
+// working with buttons
+//new book button
+btnNewBookButton.addEventListener('click', showForm);
 //storing my books objects in an array
 let myLibrary =[];
 
@@ -50,11 +53,19 @@ book2.read = "read";
 
 //looping through the array using the for.Each
 myLibrary.forEach((element, index, array)=>{
-    displayBooks.innerText = `Book Title:${element.title} by Author: ${element.author} is ${element.pages} pages`;
-    console.log(element);
+    return displayBooks.innerText = `${index} Book Title:${element.title} by Author: ${element.author} is ${element.pages} pages`;
+     
 })
 return myLibrary;
 
 
 }
 console.log(addBookToLibrary());
+
+
+//creating a function that brings a new form where users can input there books detail
+function showForm(){
+    document.querySelector('.form-container').style.display ='block';
+    document.querySelector('.books-details').style.display ='none';
+
+}

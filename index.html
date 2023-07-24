@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/desk.css">
     <link rel="icon" href="https://img.icons8.com/?size=512&id=MmkqIRv7P6Xy&format=png">
     <script src="https://kit.fontawesome.com/6a6bdefd0d.js" crossorigin="anonymous"></script>
    
@@ -33,8 +34,8 @@
     <div class="nav-bottom">
         <ul class="nav-items2">
             <li id="item"><a href=""><img id="logo" src="https://img.icons8.com/?size=512&id=MmkqIRv7P6Xy&format=png" alt=""></a></li>
-            <li><a href="">Library</a></li>
-            <li><a href="">My desk</a></li>
+            <li><a href="./index.html">Library</a></li>
+            <li><a href="./desk.html">My desk</a></li>
             <li><a href="">What's New</a></li>
             <li><a href="">Settings</a></li>
         </ul>
@@ -44,13 +45,12 @@
 
     <!-- The------Main------section -->
   <main>
-
     <div class="grid-container">
         <!-- first---column -->
         <div class="column-one">
             <div class="image-one"><img src="https://images.pexels.com/photos/1181571/pexels-photo-1181571.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></div>
             <div class="content">
-                <button><i class="fa-solid fa-plus"></i></button>
+                <button id="btn-new-book">ADD NEW BOOK</button>
                 <button><i class="fa-solid fa-download"></i></button>
                 <button><i class="fa-solid fa-share-nodes"></i></button>
             </div>
@@ -75,14 +75,41 @@
                 <div class="content-4">
                     <button>READ</button>
                 </div>
-              
-                
-                
             </div>
+
+
+
+     <!-- hiding the form so that when the add new button is clicked it will show -->
+
+     <div class="form-container " style="display: none;">
+        <form id="form-element" action="" >
+            <div class="form-controls">
+                <label for="title">Title</label>
+                <input type="text" name="book-title" id="title">
+            </div>
+            <div class="form-controls">
+                <label for="author">Author</label>
+                <input type="text" name="book-author" id="author">
+            </div>
+            <div class="form-controls">
+                <label for="pages">Pages</label>
+                <input type="number" name="book-pages" id="pages">
+            </div>
+            <div class="form-controls">
+                <button id="btn-add" type="submit">ADD</button>
+            </div>
+        </form>
+    </div>
         </div>
 
 
     </div>
+    
+
+    
+
+
+
 
     <!-- displaying the content of the books on the page -->
     <div class="display-books">
