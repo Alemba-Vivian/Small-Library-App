@@ -145,10 +145,7 @@ ol.book-lists{
 
 
 }
-ol.book-lists a{
-    color: red;
-    padding-left: 40px;
-}
+
 .display-books ol li::marker{
     /* content: " 🧡 "; */
 }
@@ -166,6 +163,13 @@ ol.book-lists a{
     letter-spacing: 1.3;
 }
 
+#trash{
+    color: red;
+    float: right;
+}
+#trash:hover{
+    cursor: pointer;
+}
 
 
 
