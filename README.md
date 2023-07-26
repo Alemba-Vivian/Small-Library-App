@@ -1,6 +1,6 @@
 # Small-Library-App
 creating a simple library app using objects and object constructors
-add button
+
 when add button is clicked, the form will appear where the user can 
 enter the details of the book e.g title, pages, author and read or not readryyy
 
@@ -11,4 +11,5 @@ Every time the add button is clicked, the book will be pushed into the array, my
 The books are created and stored in an array called my library.
 
 When the remove button is clicked, all the items added will be removed.
+
 When the trash can is clicked, the item will be removed individually
