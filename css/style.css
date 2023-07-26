@@ -120,12 +120,22 @@ border-radius: 10px;
 }
 
 button{
-    padding: 20px;
-    border-radius: 20px;
+    padding: 15px 20px 15px 20px;
+    border-radius: 10px;
+    font-weight: bold;
     border: none;
     background-color:#0a2351;
     color: white;
     font-weight: bold;
+}
+#btn-new-book{
+    background-color: green;
+}
+#btn-remove-book{
+    background-color: red;
+}
+button:hover{
+    cursor: pointer;
 }
 
 /* styling the toggle button */
@@ -212,22 +222,31 @@ button{
 
 .display-books{
     padding-top: 40px;
-    width: 600px;
-    /* display: grid;
-    text-align: center;
-    justify-content: center;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px; */
+    width: 800px;
+    color: green;
+    font-style: italic;
+    
    
 }
-ol.book-lists{
+ol{
     padding: 20px;
 
-
+}
+/* styling the spans */
+.span-details{
+    color: #0a2351;
+    padding-right: 2px;
+    padding-left: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-style: normal;
 }
 
 .display-books ol li::marker{
     /* content: " 🧡 "; */
+    font-style: normal;
+    color: #0a2351;
+
 }
 .display-books li:nth-child(even){
     background-color:#00FFFF;

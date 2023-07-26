@@ -114,7 +114,7 @@ function addBookToLibrary() {
     // list.setAttribute('id', 'list-item');
     list.id = "item" + ++itemCounter;
 
-    list.innerHTML = `Book Title: ${element.title} Author: ${element.author} Pages: ${element.pages} pages ${element.read}`;
+    list.innerHTML = `<span class="span-details">Book Title: </span>${element.title}  <span class="span-details">Author:</span>  ${element.author} <span class="span-details">Pages: </span> ${element.pages} <span class="span-details">Status: </span>  ${element.read}`;
     list.appendChild(trashIcon);
     listItems.appendChild(list);
 

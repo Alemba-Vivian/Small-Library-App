@@ -36,8 +36,8 @@
             <li id="item"><a href=""><img id="logo" src="https://img.icons8.com/?size=512&id=MmkqIRv7P6Xy&format=png" alt=""></a></li>
             <li><a href="./index.html">Library</a></li>
             <li><a href="./desk.html">My desk</a></li>
-            <li><a href="">What's New</a></li>
-            <li><a href="">Settings</a></li>
+            <li><a href="./new.html">What's New</a></li>
+            <li><a href="./setting.html">Settings</a></li>
         </ul>
     </div>
    
@@ -50,9 +50,8 @@
         <div class="column-one">
             <div class="image-one"><img src="https://images.pexels.com/photos/1181571/pexels-photo-1181571.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></div>
             <div class="content">
-                <button id="btn-new-book">ADD NEW BOOK</button>
+                <button id="btn-new-book">ADD BOOK</button>
                 <button id="btn-remove-book">REMOVE BOOK</button>
-                <button><i class="fa-solid fa-share-nodes"></i></button>
             </div>
         </div>
         <!-- second---column -->
@@ -67,14 +66,14 @@
                 </div>
 
                 <div class="content-3">
-                    <div class="para"> <a href=""><h3>Books Details</h3></a></div>
+                    <div class="para"> <a href="./new.html"><h3>Books Details</h3></a></div>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere nihil adipisci quos molestias maxime laboriosam delectus assumenda illo,
                         rem, nesciunt quae tenetur numquam voluptas. Fuga laboriosam dolorem expedita enim numquam.</p>
                 </div>
 
-                <div class="content-4">
+                <!-- <div class="content-4">
                     <button>READ</button>
-                </div>
+                </div> -->
             </div>
 
 
@@ -93,7 +92,7 @@
             </div>
             <div class="form-controls">
                 <label for="pages">Pages</label>
-                <input type="number" name="book-pages" id="pages">
+                <input type="number" min="20" max="800" name="book-pages" id="pages">
             </div>
 
             <div class="form-controls">
