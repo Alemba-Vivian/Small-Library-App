@@ -16,9 +16,13 @@ main{
 
 }
 .form-container{
-    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    padding: 30px;
     background-color: #00FFFF;
-    width: 500px;
+    /* width: 500px; */
     border-radius: 10px;
 }
 .form-controls{

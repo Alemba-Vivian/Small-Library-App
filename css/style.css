@@ -95,18 +95,20 @@ main{
 }
 
 .column-one{
-  
+   
 
 }
 .column-two{
 background-color: #00FFFF;
-padding:20px 0 10px 20px;
 border-radius: 10px;
    
     
 }
 .para{
     padding-bottom: 10px;
+}
+.content{
+    padding-bottom: 30px;
 }
 .content-1{
     padding-bottom: 20px;
@@ -137,6 +139,7 @@ button{
 button:hover{
     cursor: pointer;
 }
+
 
 /* styling the toggle button */
 /* The switch - the box around the slider */
@@ -222,7 +225,8 @@ button:hover{
 
 .display-books{
     padding-top: 40px;
-    width: 800px;
+    display: flex;
+   align-items: center;
     color: green;
     font-style: italic;
     
@@ -251,10 +255,14 @@ ol{
 .display-books li:nth-child(even){
     background-color:#00FFFF;
     border-radius: 10px;
+    padding-bottom: 30px;
+    margin: 10px;
 }
 .display-books li:nth-child(odd){
     background-color:#DCDCDC;
     border-radius: 10px;
+    padding-bottom: 30px;
+    margin: 10px;
 }
 .book-lists>li{
     padding: 10px;
@@ -265,6 +273,7 @@ ol{
 #trash{
     color: red;
     float: right;
+    padding-left: 100px;
 }
 #trash:hover{
     cursor: pointer;

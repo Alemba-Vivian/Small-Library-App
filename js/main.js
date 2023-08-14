@@ -69,17 +69,19 @@ formSubmit.addEventListener("submit", (e) => {
 let myLibrary = [];
 
 //creating a constructor for my books
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+  //creating a prototype
+  bookInfo() {
+    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
+  }
 }
 
-//creating a prototype
-Book.prototype.bookInfo = function () {
-  return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
-};
 
 //creating a function that will take the users input and stores it in the array
 function addBookToLibrary() {
