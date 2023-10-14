@@ -31,6 +31,10 @@ let itemCounter = listItems.children.length;
 let bookTitle = document.getElementById("title");
 let bookAuthor = document.getElementById("author");
 let bookPages = document.getElementById("pages");
+let errorMessage = document.getElementById("errorMessage");
+let errorAuthor =  document.getElementById("errorAuthor");
+let errorPage =  document.getElementById("errorPage");
+
 
 //getting the form selector
 const formSubmit = document.querySelector("#form-element");
@@ -44,26 +48,104 @@ btnNewBookButton.addEventListener("click", showForm);
 formSubmit.addEventListener("submit", (e) => {
   e.preventDefault();
 
+
+  if(!bookTitle.validity.valid ){
+     bookTitle.style.border ="1px solid";
+     bookTitle.style.borderColor ="red";
+     showError();
+
+    }else if(!bookPages.validity.valid){
+      bookPages.style.border ="1px solid";
+      bookPages.style.borderColor ="red";
+      showError();
+    }else if(!bookAuthor.validity.valid){
+      bookAuthor.style.border ="1px solid";
+      bookAuthor.style.borderColor ="red";
+      showError();
+    }else{
+      addBookToLibrary();
+      bookTitle.value = "";
+      bookAuthor.value = "";
+      bookPages.value = "";
+        
+    }
+
+ 
   //   checking if the inputs is empty
-  if (
-    bookTitle.value === "" ||
-    bookTitle.value === null ||
-    (bookTitle.value === undefined && bookAuthor.value === "") ||
-    bookAuthor.value === null ||
-    (bookAuthor.value === undefined && bookPages.value == "") ||
-    bookPages.value === null ||
-    bookPages.value === undefined
-  ) {
-    alert("Ensure you input all the values in all the fields");
-  } else {
-    alert("The form has been submitted successfully");
-    addBookToLibrary();
+//   if (
+//     bookTitle.value === "" ||
+//     bookTitle.value === null ||
+//     (bookTitle.value === undefined && bookAuthor.value === "") ||
+//     bookAuthor.value === null ||
+//     (bookAuthor.value === undefined && bookPages.value == "") ||
+//     bookPages.value === null ||
+//     bookPages.value === undefined
+//   ) {
+//     alert("Ensure you input all the values in all the fields");
+//   } else {
+//     alert("The form has been submitted successfully");
+//     addBookToLibrary();
+//   }
+//   bookTitle.value = "";
+//   bookAuthor.value = "";
+//   bookPages.value = "";
+  
+ });
+
+
+// Errors on individuals fields
+bookTitle.addEventListener('input', (event)=>{
+  if(bookTitle.validity.valid){
+    bookTitle.style.border ="1px solid";
+    bookTitle.style.borderColor ="green";
+    errorMessage.textContent ="";
+  }else{
+     showError();
   }
-  bookTitle.value = "";
-  bookAuthor.value = "";
-  bookPages.value = "";
+})
+bookAuthor.addEventListener('input', (event)=>{
+  if(bookAuthor.validity.valid){
+    bookAuthor.style.border ="1px solid";
+    bookAuthor.style.borderColor ="green";
+    errorAuthor.textContent ="";
+  }else{
+     showError();
+  }
+})
+bookPages.addEventListener('input', (event)=>{
+  if(bookPages.validity.valid){
+    bookPages.style.border ="1px solid";
+    bookPages.style.borderColor ="green";
+    errorPage.textContent ="";
+  }else{
+    showError();
+  }
   
 });
+
+
+//function to show error using the constraint javascript api
+function showError(){
+  if(bookTitle.validity.valueMissing){
+    errorMessage.textContent =`You need to enter the title of the book`;
+  }else if(bookTitle.validity.tooShort){
+     errorMessage.textContent = `The characters should be at least ${bookTitle.minLength}`
+  }
+  else if(bookAuthor.validity.valueMissing){
+    errorAuthor.textContent =`You need to enter the author of the book`;
+  }else if(bookAuthor.validity.tooShort){
+    errorAuthor.textContent =`The characters should be at least ${bookAuthor.minLength}`
+  }
+  else if(bookPages.validity.valueMissing){
+    errorPage.textContent =`You need to enter the number of pages`;
+  }
+   else if(bookPages.validity.rangeOverFlow){
+    errorPage.textContent =`pages should be atleast ${bookPages.max}.
+                            You entered ${bookPages.value.length}`;
+  }
+}
+
+
 
 //storing my books objects in an array
 let myLibrary = [];

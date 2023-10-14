@@ -280,6 +280,13 @@ ol{
 }
 
 
+#errorMessage
+,#errorAuthor
+,#errorPage{
+    padding-top: 10px;
+    color: red;
+}
+
 
 
 
